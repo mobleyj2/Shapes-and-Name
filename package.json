@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "homework",
   "version": "1.0.0",
   "description": "## Your Task",
   "main": "index.js",
@@ -9,8 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "inquirer": "^9.2.2",
-    "jest": "^29.5.0"
-  }
+    "i": "^0.3.7",
+    "inquirer": "^8.2.5"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {}
 }
