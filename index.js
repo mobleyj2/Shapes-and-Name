@@ -7,7 +7,6 @@
 //expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
 
 const fs = require('fs');
-
 const inquirer = require('inquirer');
 
 const {Square, Triangle, Circle } = require("./lib/shapes");
