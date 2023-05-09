@@ -15,24 +15,26 @@ const {Square, Triangle, Circle } = require("./lib/shapes");
 function writeToFile(fileName, answers){
     let svgString =""
     svgString = 
-    '<svg version = "1.1" width ="200" height ="200" xmlns="http://www.w3.org/2000/svg>';
-        svgString +="<g>";
-    svgString += `${answers.shape}`;
+    '<svg version = "1.1" width ="300" height ="200" xmlns="http://www.w3.org/2000/svg">'; 
+    //svgString +="<g>";
+    //svgString += `${answers.shape}`;
 
-let ShapeChoice;
+let Choice;
 if (answers.shape === "Triangle"){
-    ShapeChoice = new Triangle();
+    Choice = new Triangle();
     svgString += `<polygon points ="150, 18 244, 182 56, 182" fill = "${answers.ShapeBackgroundColor}"/>`;
 }   else if (answers.shape === "Square") {
-    ShapeChoice = new Square();
-    svgString += `<rect x= "73" y="40" width="160" height "160" fill = "${answers.ShapeBackgroundColor}"/>`;
+    Choice = new Square();
+    svgString += `<rect x= "73" y="40" width="160" height ="160" fill = "${answers.ShapeBackgroundColor}"/>`;
 }   else {
-    ShapeChoice = new Circle();
-    svgString += `<circle cx="25" cy="75" r="20" fill= "${answers.ShapeBackgroundColor}"/>`;
+    Choice = new Circle();
+    svgString += `<Circle cx="25" cy="75" r="20" fill= "${answers.ShapeBackgroundColor}"/>`;
 }
-svgString += `<text x="150" y="130" text-anchor="middle" font-size="40" fill= ${answers.textColor}>${answers.text}`;
+    svgString += `<text x="150" y="125" text-anchor="middle" font-size="40" fill= "${answers.textColor}">${answers.text}</text>`;
    //svgString += "</g>";
-   //svgString += "</svg>";
+
+    svgString += "</svg>";
+
  fs.writeFile(fileName, svgString, (err) => {
     err ? console.log(err) : console.log ("Made logo.svg");
  });
@@ -53,7 +55,7 @@ inquirer
     }},
     {
         type: 'list',
-        choices: ['Square','Triangle','Circle'] ,
+        choices: ["Square","Triangle","Circle"] ,
         message: 'Please select a shape?',
         name: 'shape',
     },
