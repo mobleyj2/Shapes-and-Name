@@ -19,7 +19,7 @@ if (answers.shape === "Triangle"){
     svgString += `<rect x= "90" y="40" width="120" height ="120" fill ="${answers.shapeBack}"/>`;
 }   else {
     Choice = new Circle();
-    svgString += `<Circle cx="50" cy="25" r="20" fill="${answers.shapeBack}"/>`;
+    svgString += `<circle cx="50" cy="25" r="20" fill= "${answers.shapeBack}"/>`;
 }
     svgString += `<text x="150" y="125" text-anchor="middle" font-size="40" fill="${answers.textColor}">${answers.text}</text>`;
    
